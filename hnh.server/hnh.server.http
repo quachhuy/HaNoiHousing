@@ -1,0 +1,6 @@
+@hnh.server_HostAddress = http://localhost:5156
+
+GET {{hnh.server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
