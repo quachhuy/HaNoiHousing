@@ -21,6 +21,3 @@ To get started with the Hanoi Real Estate Rental Support System, follow these st
 
 ## Contributing
 Contributions to the Hanoi Real Estate Rental Support System project are welcome! Whether you want to report a bug, suggest a new feature, or contribute code, please feel free to submit a pull request or open an issue on GitHub.
-
-## License
-This project is licensed under the [MIT License](LICENSE).
