@@ -1,0 +1,21 @@
+# Created by https://www.toptal.com/developers/gitignore/api/vuejs,dotnetcore
+# Edit at https://www.toptal.com/developers/gitignore?templates=vuejs,dotnetcore
+
+### DotnetCore ###
+# .NET Core build folders
+bin/
+obj/
+
+# Common node modules locations
+/node_modules
+/wwwroot/node_modules
+
+### Vuejs ###
+# Recommended template: Node.gitignore
+
+node_modules/
+dist/
+npm-debug.log
+yarn-error.log
+
+# End of https://www.toptal.com/developers/gitignore/api/vuejs,dotnetcore
