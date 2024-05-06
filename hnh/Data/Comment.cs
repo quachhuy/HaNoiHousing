@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using hnh.Models;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace hnh.Data
@@ -12,6 +13,11 @@ namespace hnh.Data
         [Required]
         public string? Content { get; set; }
         public int UserId { get; set; }
+        [ForeignKey("UserId")]
+        public Users? User { get; set; }
         public int PropertyId { get; set; }
+        [ForeignKey("PropertyId")]
+        public Property?  Property { get; set; }
+
     }
 }

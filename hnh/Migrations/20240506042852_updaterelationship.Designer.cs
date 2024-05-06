@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using hnh.Data;
 
@@ -11,9 +12,11 @@ using hnh.Data;
 namespace hnh.Migrations
 {
     [DbContext(typeof(MyDbcontext))]
-    partial class MyDbcontextModelSnapshot : ModelSnapshot
+    [Migration("20240506042852_updaterelationship")]
+    partial class updaterelationship
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,7 +41,7 @@ namespace hnh.Migrations
 
                     b.HasKey("CategoryId");
 
-                    b.ToTable("categories", (string)null);
+                    b.ToTable("categories");
                 });
 
             modelBuilder.Entity("hnh.Data.Comment", b =>
@@ -65,7 +68,7 @@ namespace hnh.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("comments", (string)null);
+                    b.ToTable("comments");
                 });
 
             modelBuilder.Entity("hnh.Data.District", b =>
@@ -86,7 +89,7 @@ namespace hnh.Migrations
 
                     b.HasKey("DistrictId");
 
-                    b.ToTable("Districts", (string)null);
+                    b.ToTable("Districts");
                 });
 
             modelBuilder.Entity("hnh.Data.Property", b =>
@@ -163,7 +166,7 @@ namespace hnh.Migrations
 
                     b.HasIndex("UsersUserId");
 
-                    b.ToTable("properties", (string)null);
+                    b.ToTable("properties");
                 });
 
             modelBuilder.Entity("hnh.Data.Report", b =>
@@ -196,7 +199,7 @@ namespace hnh.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("reports", (string)null);
+                    b.ToTable("reports");
                 });
 
             modelBuilder.Entity("hnh.Data.Users", b =>
@@ -244,7 +247,7 @@ namespace hnh.Migrations
 
                     b.HasKey("UserId");
 
-                    b.ToTable("users", (string)null);
+                    b.ToTable("users");
                 });
 
             modelBuilder.Entity("hnh.Data.password_reset", b =>
@@ -268,7 +271,7 @@ namespace hnh.Migrations
 
                     b.HasKey("password_resetId");
 
-                    b.ToTable("password_resets", (string)null);
+                    b.ToTable("password_resets");
                 });
 
             modelBuilder.Entity("hnh.Models.User", b =>
@@ -318,7 +321,7 @@ namespace hnh.Migrations
 
                     b.HasKey("UserId");
 
-                    b.ToTable("User", (string)null);
+                    b.ToTable("User");
                 });
 
             modelBuilder.Entity("hnh.Data.Comment", b =>

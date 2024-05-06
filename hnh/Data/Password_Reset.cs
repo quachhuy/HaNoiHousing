@@ -9,9 +9,9 @@ namespace hnh.Data
         [Key]
         public int password_resetId { get; set; }
         [Required]
-        public string Email { get; set; }
+        public string? Email { get; set; }
         [Required]
-        public string Token { get; set; }
+        public string? Token { get; set; }
         public DateTime? CreatedAt { get; set; }
 
     }

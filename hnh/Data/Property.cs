@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using hnh.Models;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace hnh.Data
@@ -36,10 +37,16 @@ namespace hnh.Data
         [Required]
 
         public int UserId { get; set; }
+        [ForeignKey("UserId")]
+        public Users? User { get; set; }
         [Required]
         public int DistrictId { get; set; }
+        [ForeignKey("DistrictId")]
+        public District? District { get; set; }
         [Required]
         public int CategoryId { get; set; }
+        [ForeignKey("CategoryId")]
+        public Category? Category { get; set; }
         [Required]
         public string? Utilities { get; set; }
         [Required]
@@ -49,5 +56,6 @@ namespace hnh.Data
         public bool Approve { get; set; }
         [Required]
         public string? Slug { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
     }
 }

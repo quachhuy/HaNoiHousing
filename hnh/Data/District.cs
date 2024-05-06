@@ -9,9 +9,11 @@ namespace hnh.Data
         [Key]
         public int DistrictId { get; set; }
         [Required]
-        public string Name { get; set; }
+        public string? Name { get; set; }
         [Required]
 
-        public string Slug { get; set; }
+        public string? Slug { get; set; }
+
+        public virtual ICollection<Property> Properties { get; set; }
     }
 }

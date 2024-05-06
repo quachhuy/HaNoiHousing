@@ -11,5 +11,6 @@ namespace hnh.Data
         public int CategoryId { get; set; }
         public string? Name { get; set; }
         public string? Slug { get; set; }
+        public virtual ICollection<Property> Properties { get; set; }
     }
 }

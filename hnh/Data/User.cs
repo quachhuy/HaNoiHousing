@@ -32,5 +32,9 @@ namespace hnh.Data
         [Required]
         [DefaultValue("1")]
         public string? Status { get; set; }
+
+        public virtual ICollection<Comment> Comments { get; set; }
+        public virtual ICollection<Report> Reports { get; set; }
+        public virtual ICollection<Property> Properties { get; set; }
     }
 }
