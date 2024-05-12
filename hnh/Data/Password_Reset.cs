@@ -2,17 +2,15 @@
 using System.ComponentModel.DataAnnotations.Schema;
 namespace hnh.Data
 {
-    [Table("password_resets")]
-    public class password_reset
+    public class Password_Reset
     {
         // create table password_resets with id, email, token, created_at.
-        [Key]
-        public int password_resetId { get; set; }
-        [Required]
-        public string? Email { get; set; }
-        [Required]
-        public string? Token { get; set; }
-        public DateTime? CreatedAt { get; set; }
+        public int password_resetid { get; set; }
+        public string email { get; set; }
+        public string token { get; set; }
+        public DateTime? createdat { get; set; }
+        public int userid { get; set; }
+        public User? User { get; set; }
 
     }
 }

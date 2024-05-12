@@ -3,14 +3,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace hnh.Data
 {
-    [Table("categories")]
     public class Category
     {
         // create table categories with id, name, slug.
-        [Key]
-        public int CategoryId { get; set; }
-        public string? Name { get; set; }
-        public string? Slug { get; set; }
+        public int categoryid { get; set; }
+        public string name { get; set; }
+        public string slug { get; set; }
         public virtual ICollection<Property> Properties { get; set; }
     }
 }
