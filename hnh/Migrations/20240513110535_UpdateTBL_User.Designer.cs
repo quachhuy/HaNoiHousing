@@ -12,8 +12,8 @@ using hnh.Data;
 namespace hnh.Migrations
 {
     [DbContext(typeof(MyDbcontext))]
-    [Migration("20240512100822_DbInit")]
-    partial class DbInit
+    [Migration("20240513110535_UpdateTBL_User")]
+    partial class UpdateTBL_User
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -314,13 +314,14 @@ namespace hnh.Migrations
                         .HasMaxLength(15)
                         .HasColumnType("nvarchar(15)");
 
-                    b.Property<string>("remembertoken")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid>("remembertoken")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("role")
+                    b.Property<string>("role")
+                        .IsRequired()
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasDefaultValue(0);
+                        .HasColumnType("nvarchar(max)")
+                        .HasDefaultValue("0");
 
                     b.Property<string>("status")
                         .IsRequired()

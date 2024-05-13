@@ -13,12 +13,12 @@ namespace hnh.Data
         public string name { get; set; }
         public string email { get; set; }
         public string password { get; set; }
-        public int role { get; set; } // 0: user, 1: admin
+        public string role { get; set; } // 0: user, 1: admin
 
         public string phone { get; set; }
         public string avatar { get; set; }
 
-        public string? remembertoken { get; set; }
+        public Guid remembertoken { get; set; }
         public DateTime? createdat { get; set; }
 
         public DateTime? updatedat { get; set; }

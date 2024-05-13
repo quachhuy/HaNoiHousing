@@ -64,7 +64,7 @@ namespace hnh.Migrations
                     role = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
                     phone = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
                     avatar = table.Column<string>(type: "nvarchar(max)", nullable: false, defaultValue: "no-avatar.jpg"),
-                    remembertoken = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    remembertoken = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     createdat = table.Column<DateTime>(type: "datetime2", nullable: true, defaultValueSql: "getdate()"),
                     updatedat = table.Column<DateTime>(type: "datetime2", nullable: true, defaultValueSql: "getdate()"),
                     status = table.Column<string>(type: "nvarchar(max)", nullable: false, defaultValue: "1")

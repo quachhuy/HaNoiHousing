@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using hnh.Data;
 
@@ -11,9 +12,11 @@ using hnh.Data;
 namespace hnh.Migrations
 {
     [DbContext(typeof(MyDbcontext))]
-    partial class MyDbcontextModelSnapshot : ModelSnapshot
+    [Migration("20240513103349_DbInit")]
+    partial class DbInit
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -314,11 +317,10 @@ namespace hnh.Migrations
                     b.Property<Guid>("remembertoken")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("role")
-                        .IsRequired()
+                    b.Property<int>("role")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("nvarchar(max)")
-                        .HasDefaultValue("0");
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
 
                     b.Property<string>("status")
                         .IsRequired()

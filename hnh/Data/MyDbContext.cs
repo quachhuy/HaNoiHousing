@@ -152,7 +152,7 @@ namespace hnh.Data
                 e.Property(u => u.role).IsRequired().HasDefaultValue(0);
                 e.Property(u => u.phone).HasMaxLength(15).IsRequired();
                 e.Property(u => u.avatar).IsRequired().HasDefaultValue("no-avatar.jpg");
-                e.Property(u => u.remembertoken);
+                e.Property(u => u.remembertoken).IsRequired();
                 e.Property(u => u.createdat).HasDefaultValueSql("getdate()");
                 e.Property(u => u.updatedat).HasDefaultValueSql("getdate()");
                 e.Property(u => u.status).IsRequired().HasDefaultValue("1");
